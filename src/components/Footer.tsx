@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-2xl font-bold text-primary">
               <img
-                  src="src/assets/logo.png"
+                  src="https://i.imghippo.com/files/wda3783ouk.png"
                   alt="Portfolio Hero"
                   className="w-20 h-auto object-cover"
                 />
