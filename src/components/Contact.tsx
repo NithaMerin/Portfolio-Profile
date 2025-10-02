@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const contactInfo = [
@@ -21,6 +23,45 @@ const Contact = () => {
       value: "Murunkan, Mannar, Sri Lanka",
     },
   ];
+
+  // Form state
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setResult(null);
+    try {
+      await emailjs.send(
+        "service_zb5ytd5",
+        "template_sk774qd",
+        {
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+        "MnT854Tx2QXg1LFWi"
+      );
+      setResult({ type: "success", message: "Message sent successfully!" });
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      setResult({ type: "error", message: "Failed to send message. Please try again later." });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="contact" className="min-h-screen flex items-center justify-center px-4 md:px-8 py-20">
@@ -73,37 +114,76 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="animate-fade-in-right">
-            <form className="space-y-6 bg-card/50 backdrop-blur-sm rounded-2xl border border-border p-8">
+            <form onSubmit={handleSubmit} className="space-y-6 bg-card/50 backdrop-blur-sm rounded-2xl border border-border p-8">
               <div>
-                <label className="text-foreground font-medium mb-2 block">
+                <label className="text-foreground font-medium mb-2 block" htmlFor="name">
                   Your Name
                 </label>
-                <Input placeholder="John Doe" className="bg-background/50" />
-              </div>
-              <div>
-                <label className="text-foreground font-medium mb-2 block">
-                  Your Email
-                </label>
-                <Input type="email" placeholder="john@example.com" className="bg-background/50" />
-              </div>
-              <div>
-                <label className="text-foreground font-medium mb-2 block">
-                  Subject
-                </label>
-                <Input placeholder="Project Inquiry" className="bg-background/50" />
-              </div>
-              <div>
-                <label className="text-foreground font-medium mb-2 block">
-                  Message
-                </label>
-                <Textarea 
-                  placeholder="Tell me about your project..." 
-                  className="bg-background/50 min-h-[150px]"
+                <Input
+                  id="name"
+                  name="name"
+                  placeholder="John Doe"
+                  className="bg-background/50"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
                 />
               </div>
-              <Button size="lg" className="w-full font-semibold">
-                Send Message
+              <div>
+                <label className="text-foreground font-medium mb-2 block" htmlFor="email">
+                  Your Email
+                </label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="john@example.com"
+                  className="bg-background/50"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label className="text-foreground font-medium mb-2 block" htmlFor="subject">
+                  Subject
+                </label>
+                <Input
+                  id="subject"
+                  name="subject"
+                  placeholder="Project Inquiry"
+                  className="bg-background/50"
+                  value={form.subject}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div>
+                <label className="text-foreground font-medium mb-2 block" htmlFor="message">
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell me about your project..."
+                  className="bg-background/50 min-h-[150px]"
+                  value={form.message}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <Button size="lg" className="w-full font-semibold" type="submit" disabled={loading}>
+                {loading ? "Sending..." : "Send Message"}
               </Button>
+              {result && (
+                <div
+                  className={`text-center mt-2 font-medium ${
+                    result.type === "success" ? "text-green-600" : "text-red-600"
+                  }`}
+                >
+                  {result.message}
+                </div>
+              )}
             </form>
           </div>
         </div>
