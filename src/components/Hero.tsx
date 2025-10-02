@@ -77,7 +77,7 @@ const Hero = () => {
               <div className="relative rounded-2xl overflow-hidden">
                 <img
                   src="https://i.imghippo.com/files/ykYe7077QOM.png"
-                  alt="Portfolio Hero"
+                  alt="Portfolio Hero image"
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
