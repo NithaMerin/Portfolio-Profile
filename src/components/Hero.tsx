@@ -76,7 +76,7 @@ const Hero = () => {
             <div className="relative animate-fade-in-right">
               <div className="relative rounded-2xl overflow-hidden">
                 <img
-                  src="https://i.imghippo.com/files/ykYe7077QOM.png"
+                  src="src/assets/hero-image.png"
                   alt="Portfolio Hero"
                   className="w-full h-auto object-cover"
                 />
