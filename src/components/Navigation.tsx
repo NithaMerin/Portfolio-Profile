@@ -20,7 +20,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="text-2xl font-bold text-primary tracking-wider">
              <img
-                  src="src/assets/logo.png"
+                  src="https://i.imghippo.com/files/wda3783ouk.png"
                   alt="Portfolio Hero"
                   className="w-10 h-auto object-cover"
                 />
