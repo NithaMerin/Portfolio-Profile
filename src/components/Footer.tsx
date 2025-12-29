@@ -2,7 +2,7 @@ import { Instagram, Linkedin, Dribbble, Github } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
-     { icon: Instagram, href: "https://www.instagram.com/merin_nl/", target: "_blank"},
+    { icon: Instagram, href: "https://www.instagram.com/merin_nl/", target: "_blank" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/merin-nitharsan-6b6a23354/", target: "_blank" },
     { icon: Github, href: "https://github.com/NithaMerin", target: "_blank" },
   ];
@@ -12,13 +12,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-2xl font-bold text-primary">
-              <img
-                  src="https://i.imghippo.com/files/wda3783ouk.png"
-                  alt="Portfolio Hero"
-                  className="w-20 h-auto object-cover"
-                />
+            <img
+              src="/logo.png"
+              alt="Portfolio Logo"
+              className="w-20 h-auto object-cover"
+            />
           </div>
-          
+
           <div className="flex gap-4">
             {socialLinks.map((social, index) => (
               <a
@@ -30,7 +30,7 @@ const Footer = () => {
               </a>
             ))}
           </div>
-          
+
           <div className="text-muted-foreground text-sm">
             © 2025 Merin Nitharsan. All rights reserved.
           </div>

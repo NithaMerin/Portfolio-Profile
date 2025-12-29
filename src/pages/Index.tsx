@@ -8,16 +8,27 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="mb-4">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Background Animated Logo */}
+      <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
+        <img
+          src="/logo.png"
+          alt="Background Logo"
+          className="w-[80vw] md:w-[60vw] h-auto object-contain animate-blink opacity-5 grayscale"
+        />
+      </div>
+
+      <div className="relative z-50">
         <Navigation />
       </div>
-      <Hero />
-      <Services />
-      <About />
-      <Portfolio />
-      <Contact />
-      <Footer />
+      <div className="relative z-10">
+        <Hero />
+        <Services />
+        <About />
+        <Portfolio />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };

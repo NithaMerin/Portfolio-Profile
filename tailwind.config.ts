@@ -103,6 +103,10 @@ export default {
         "stagger-slide-up": {
           "0%": { opacity: "0", transform: "translateY(30px) scale(0.95)" },
           "100%": { opacity: "1", transform: "translateY(0) scale(1)" }
+        },
+        "blink": {
+          "0%, 100%": { opacity: "0.03" },
+          "50%": { opacity: "0.15" }
         }
       },
       animation: {
@@ -117,6 +121,7 @@ export default {
         "fade-up-reveal": "fade-up-reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards",
         "stagger-slide-up": "stagger-slide-up 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards",
         "spin-slow": "spin 8s linear infinite",
+        "blink": "blink 4s ease-in-out infinite",
       },
     },
   },

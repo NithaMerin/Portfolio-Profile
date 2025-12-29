@@ -71,9 +71,9 @@ const Navigation = () => {
           <div className="relative group/logo cursor-pointer overflow-visible">
             <div className="absolute inset-0 bg-primary/20 rounded-xl blur-xl opacity-0 group-hover/logo:opacity-100 transition-opacity duration-500 scale-150" />
             <img
-              src="https://i.imghippo.com/files/wda3783ouk.png"
+              src="/logo.png"
               alt="Portfolio Logo"
-              className="w-14 h-auto object-cover rounded-xl shadow-lg border border-primary/20 relative z-10 transition-all duration-500 group-hover/logo:scale-110 group-hover/logo:rotate-[5deg] group-hover/logo:border-primary/50 group-hover/logo:shadow-primary/20"
+              className="w-14 h-auto object-cover rounded-xl shadow-lg relative z-10 transition-all duration-500 group-hover/logo:scale-110 group-hover/logo:rotate-[5deg] group-hover/logo:border-primary/50 group-hover/logo:shadow-primary/20"
             />
           </div>
 
