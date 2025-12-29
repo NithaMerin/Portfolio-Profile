@@ -15,6 +15,7 @@ const Footer = () => {
             <img
               src="/logo.png"
               alt="Portfolio Logo"
+              style={{ filter: "hue-rotate(calc(var(--primary-hue, 24) * 1deg - 217deg))" }}
               className="w-20 h-auto object-cover"
             />
           </div>

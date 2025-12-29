@@ -104,6 +104,10 @@ export default {
           "0%": { opacity: "0", transform: "translateY(30px) scale(0.95)" },
           "100%": { opacity: "1", transform: "translateY(0) scale(1)" }
         },
+        "text-shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" }
+        },
         "blink": {
           "0%, 100%": { opacity: "0.03" },
           "50%": { opacity: "0.15" }
@@ -122,6 +126,7 @@ export default {
         "stagger-slide-up": "stagger-slide-up 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards",
         "spin-slow": "spin 8s linear infinite",
         "blink": "blink 4s ease-in-out infinite",
+        "text-shimmer": "text-shimmer 2.5s infinite linear",
       },
     },
   },

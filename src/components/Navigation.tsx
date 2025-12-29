@@ -22,6 +22,10 @@ const Navigation = () => {
     if (savedColor) {
       setActiveColor(savedColor);
       document.documentElement.style.setProperty("--primary-color", savedColor);
+      const hue = savedColor.split(" ")[0];
+      document.documentElement.style.setProperty("--primary-hue", hue);
+    } else {
+      document.documentElement.style.setProperty("--primary-hue", "24");
     }
 
     const handleClickOutside = (event: MouseEvent) => {
@@ -37,7 +41,13 @@ const Navigation = () => {
   const handleColorChange = (color: string) => {
     setActiveColor(color);
     document.documentElement.style.setProperty("--primary-color", color);
+    const hue = color.split(" ")[0];
+    document.documentElement.style.setProperty("--primary-hue", hue);
     localStorage.setItem("ui-primary-color", color);
+
+    // Add a quick pulse effect to the body for visual feedback
+    document.body.classList.add('theme-changing');
+    setTimeout(() => document.body.classList.remove('theme-changing'), 500);
   };
 
   const navLinks = [
@@ -73,6 +83,7 @@ const Navigation = () => {
             <img
               src="/logo.png"
               alt="Portfolio Logo"
+              style={{ filter: "hue-rotate(calc(var(--primary-hue, 24) * 1deg - 217deg)) drop-shadow(0 0 10px hsla(var(--primary) / 0.3))" }}
               className="w-14 h-auto object-cover rounded-xl shadow-lg relative z-10 transition-all duration-500 group-hover/logo:scale-110 group-hover/logo:rotate-[5deg] group-hover/logo:border-primary/50 group-hover/logo:shadow-primary/20"
             />
           </div>

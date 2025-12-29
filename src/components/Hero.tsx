@@ -25,11 +25,24 @@ const Hero = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
             {/* Left Content */}
             <div className="space-y-6 animate-fade-in-left">
-              <div className="space-y-2">
-                <p className="text-muted-foreground text-lg font-medium tracking-wide animate-fade-in" style={{ animationDelay: '0.1s' }}>Hi I am</p>
-                <h1 className="text-foreground text-3xl md:text-5xl font-bold tracking-tight animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                  Merin Nitharsan
-                </h1>
+              <div className="space-y-4">
+                {/* Motto Badge */}
+                <div
+                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-md animate-fade-in group/motto hover:border-primary/50 transition-colors"
+                  style={{ animationDelay: '0.05s' }}
+                >
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  <span className="text-[10px] font-black uppercase tracking-[0.25em] text-primary/80 group-hover/motto:text-primary transition-colors bg-gradient-to-r from-transparent via-white/50 to-transparent bg-[length:200%_100%] animate-text-shimmer bg-clip-text">
+                    Be Your Own Brand.
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <p className="text-muted-foreground text-lg font-medium tracking-wide animate-fade-in" style={{ animationDelay: '0.1s' }}>Hi I am</p>
+                  <h1 className="text-foreground text-3xl md:text-5xl font-bold tracking-tight animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                    Merin Nitharsan
+                  </h1>
+                </div>
               </div>
 
               <h2 className="text-primary text-5xl md:text-6xl lg:text-8xl font-black leading-[1.1] animate-fade-in text-glow" style={{ animationDelay: '0.4s' }}>

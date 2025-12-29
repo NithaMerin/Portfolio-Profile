@@ -14,7 +14,8 @@ const Index = () => {
         <img
           src="/logo.png"
           alt="Background Logo"
-          className="w-[80vw] md:w-[60vw] h-auto object-contain animate-blink opacity-5 grayscale"
+          style={{ filter: "hue-rotate(calc(var(--primary-hue, 24) * 1deg - 217deg)) contrast(1.1) brightness(1.2)" }}
+          className="w-[80vw] md:w-[60vw] h-auto object-contain animate-blink opacity-5"
         />
       </div>
 
