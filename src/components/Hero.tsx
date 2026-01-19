@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Github } from "lucide-react";
 
-const TechBubble = ({ icon, className, delay, size = "w-12 h-12", zIndex = "z-20" }: { icon: string; className: string; delay: string; size?: string; zIndex?: string }) => (
+const TechBubble = ({ icon, className, delay, size = "w-10 h-10 md:w-12 md:h-12", zIndex = "z-20" }: { icon: string; className: string; delay: string; size?: string; zIndex?: string }) => (
   <div
-    className={`absolute ${className} ${size} ${zIndex} rounded-2xl glass-card flex items-center justify-center p-2.5 transition-all duration-500 hover:scale-125 hover:rotate-12 animate-float shadow-xl shadow-primary/10`}
+    className={`absolute ${className} ${size} ${zIndex} rounded-xl md:rounded-2xl glass-card flex items-center justify-center p-1.5 md:p-2.5 transition-all duration-500 hover:scale-125 hover:rotate-12 animate-float shadow-xl shadow-primary/10`}
     style={{ animationDelay: delay }}
   >
     <img src={icon} alt="tech icon" className="w-full h-full object-contain filter brightness-110" />
@@ -33,21 +33,21 @@ const Hero = () => {
 
   const techLogos: TechIcon[] = [
     // Floating over hero section
-    { icon: "https://cdn.simpleicons.org/angular/DD0031", className: "top-4 -left-20", delay: "0s", size: "w-14 h-14" },
-    { icon: "https://cdn.simpleicons.org/django/092E20", className: "top-4 -right-20", delay: "1.2s", size: "w-14 h-14" },
+    { icon: "https://cdn.simpleicons.org/angular/DD0031", className: "top-0 md:top-4 -left-4 md:-left-20", delay: "0s", size: "w-10 h-10 md:w-14 md:h-14" },
+    { icon: "https://cdn.simpleicons.org/django/092E20", className: "top-0 md:top-4 -right-4 md:-right-20", delay: "1.2s", size: "w-10 h-10 md:w-14 md:h-14" },
 
     // In front of profile image
-    { icon: "https://cdn.simpleicons.org/nodedotjs/339933", className: "bottom-1/4 left-1/2 -ml-20", delay: "0.4s", zIndex: "z-30", size: "w-14 h-14" },
-    { icon: "https://cdn.simpleicons.org/react/61DAFB", className: "top-1/4 left-10", delay: "1.5s", zIndex: "z-30", size: "w-16 h-16" },
-    { icon: "https://cdn.simpleicons.org/python/3776AB", className: "bottom-1/4 right-10", delay: "0.8s", zIndex: "z-30", size: "w-14 h-14" },
-    { icon: "https://cdn.simpleicons.org/supabase/3ECF8E", className: "top-10 left-10", delay: "2.2s", zIndex: "z-30", size: "w-12 h-12" },
-    { icon: "https://cdn.simpleicons.org/postgresql/4169E1", className: "bottom-20 -left-8", delay: "3s", zIndex: "z-30", size: "w-14 h-14" },
-    { icon: "https://cdn.simpleicons.org/graphql/E10098", className: "top-1/2 -right-10", delay: "0.5s", zIndex: "z-30", size: "w-14 h-14" },
-    { icon: "https://cdn.simpleicons.org/figma/F24E1E", className: "bottom-10 right-10", delay: "1.8s", zIndex: "z-30", size: "w-12 h-12" },
+    { icon: "https://cdn.simpleicons.org/nodedotjs/339933", className: "bottom-1/4 left-1/2 -ml-12 md:-ml-20", delay: "0.4s", zIndex: "z-30", size: "w-10 h-10 md:w-14 md:h-14" },
+    { icon: "https://cdn.simpleicons.org/react/61DAFB", className: "top-1/4 left-4 md:left-10", delay: "1.5s", zIndex: "z-30", size: "w-12 h-12 md:w-16 md:h-16" },
+    { icon: "https://cdn.simpleicons.org/python/3776AB", className: "bottom-1/4 right-4 md:right-10", delay: "0.8s", zIndex: "z-30", size: "w-10 h-10 md:w-14 md:h-14" },
+    { icon: "https://cdn.simpleicons.org/supabase/3ECF8E", className: "top-6 md:top-10 left-6 md:left-10", delay: "2.2s", zIndex: "z-30", size: "w-8 h-8 md:w-12 md:h-12" },
+    { icon: "https://cdn.simpleicons.org/postgresql/4169E1", className: "bottom-20 -left-2 md:-left-8", delay: "3s", zIndex: "z-30", size: "w-10 h-10 md:w-14 md:h-14" },
+    { icon: "https://cdn.simpleicons.org/graphql/E10098", className: "top-1/2 -right-4 md:-right-10", delay: "0.5s", zIndex: "z-30", size: "w-10 h-10 md:w-14 md:h-14" },
+    { icon: "https://cdn.simpleicons.org/figma/F24E1E", className: "bottom-10 right-4 md:right-10", delay: "1.8s", zIndex: "z-30", size: "w-8 h-8 md:w-12 md:h-12" },
 
     // Accents
-    { icon: "https://cdn.simpleicons.org/n8n/FF6D5A", className: "top-4 right-1/3", delay: "2.5s", zIndex: "z-30", size: "w-10 h-10" },
-    { icon: "https://cdn.simpleicons.org/mongodb/47A248", className: "bottom-4 left-1/3", delay: "0.2s", zIndex: "z-30", size: "w-10 h-10" },
+    { icon: "https://cdn.simpleicons.org/n8n/FF6D5A", className: "top-4 right-1/4 md:right-1/3", delay: "2.5s", zIndex: "z-30", size: "w-8 h-8 md:w-10 md:h-10" },
+    { icon: "https://cdn.simpleicons.org/mongodb/47A248", className: "bottom-4 left-1/4 md:left-1/3", delay: "0.2s", zIndex: "z-30", size: "w-8 h-8 md:w-10 md:h-10" },
   ];
 
   return (
